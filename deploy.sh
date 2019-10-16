@@ -14,6 +14,6 @@ docker push aotarola/multi-worker:$SHA
 kubectl apply -f k8s
 
 # force deployments to update
-kubectl set image deployments/client-deployment client=aotarola/multi-server:$SHA
+kubectl set image deployments/client-deployment client=aotarola/multi-client:$SHA
 kubectl set image deployments/server-deployment server=aotarola/multi-server:$SHA
-kubectl set image deployments/worker-deployment worker=aotarola/multi-server:$SHA
+kubectl set image deployments/worker-deployment worker=aotarola/multi-worker:$SHA
