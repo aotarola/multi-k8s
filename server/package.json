@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "4.16.3",
+    "pg": "7.4.3",
+    "redis": "2.8.0",
+    "cors": "2.8.4",
+    "nodemon": "1.18.3",
+    "body-parser": "*"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-groupon": "^7.2.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-mocha": "^5.3.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "prettier": "^1.18.2"
+  }
+}
