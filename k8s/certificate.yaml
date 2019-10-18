@@ -1,18 +1,25 @@
-apiVersion: certmanager.k8s.io/v1alpha1
-kind: Certificate
-metadata:
-  secretName: k8s-multi-com-tls
-  issuerRef:
-    name: letsencrypt-prod
-    kind: ClusterIssuer
-  commonName: memeo.cl
-  dnsNames:
-    - memeo.cl
-    - www.memeo.cl
-  acme:
-    config:
-      - http01:
-          ingressClass: nginx
-        domains:
-          - memeo.cl
-          - www.memeo.cl
+# cat <<EOF > cert.yaml
+# apiVersion: certmanager.k8s.io/v1alpha1
+# kind: Certificate
+# metadata:
+#   name: example-com
+#   namespace: default
+# spec:
+#   secretName: example-com-tls
+#   issuerRef:
+#     name: letsencrypt-staging
+#     kind: ClusterIssue
+#   commonName: memeo.cl
+#   dnsNames:
+#   - www.memeo.cl
+#   acme:
+#     config:
+#     - http01:
+#         ingressClass: nginx
+#       domains:
+#       - memeo.cl
+#     - http01:
+#         ingress: my-ingress
+#       domains:
+#       - www.memeo.cl
+# EOF
