@@ -43,7 +43,7 @@ const redisClient = redis.createClient({
 const redisPublisher = redisClient.duplicate();
 
 app.get('/', (_, res) => {
-  res.send('Hi');
+  res.send('Hi!!');
 });
 
 app.get('/values/all', async (_, res) => {

@@ -12,7 +12,24 @@ build:
         '**/*.js': .
         '**/*.css': .
         '**/*.html': .
+    - image: aotarola/multi-server
+      context: server
+      docker:
+        dockerfile: ./Dockerfile.dev
+      sync:
+        '**/*.js': .
+    - image: aotarola/multi-worker
+      context: worker
+      docker:
+        dockerfile: ./Dockerfile.dev
+      sync:
+        '**/*.js': .
 deploy:
   kubectl:
     manifests:
       - k8s/client-deployment.yaml
+      - k8s/server-deployment.yaml
+      - k8s/worker-deployment.yaml
+      - k8s/worker-cluster-ip-service.yaml
+      - k8s/client-cluster-ip-service.yaml
+      - k8s/server-cluster-ip-service.yaml
